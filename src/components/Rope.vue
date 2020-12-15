@@ -70,12 +70,12 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $swing-angle: 1deg;
-$rope-segment: 3px;
+$rope-segment: 5px;
 $rope-width: 1px;
 $segment-scale: 0.95;
-$swing-speed: 10s;
+$swing-speed: 7s;
 
 div {
     background: #ccc;
@@ -86,12 +86,11 @@ div {
 }
 
 div > div {
-    font-size: $rope-segment;
     position: absolute;
     background-color: red;
     border-bottom: 1px solid red;
     width: $rope-width;
-    height: 3em;
+    height: $rope-segment;
     border-radius: 0;
     transform-origin: top center;
     animation: pendulum $swing-speed infinite;
@@ -99,8 +98,7 @@ div > div {
 }
 
 div > div > div {
-    font-size: $segment-scale * 1em;
-    top: 3em * (1 / $segment-scale);
+    top: $rope-segment * (1 / $segment-scale);
     left: 0;
 }
 
@@ -108,8 +106,14 @@ div > div > div {
     0% {
         transform: rotate(-$swing-angle);
     }
-    50% {
+    25% {
         transform: rotate(-$swing-angle / 2);
+    }
+    50% {
+        transform: rotate(-$swing-angle / 1.5);
+    }
+    75% {
+        transform: rotate(-$swing-angle / 1.7);
     }
     100% {
         transform: rotate(-$swing-angle);
@@ -131,6 +135,7 @@ div > div > div {
     line-height: 20px;
     text-align: center;
     padding-top: 5px;
+    font-size: 0.5em;
     font-weight: 3000;
     letter-spacing: 5px;
     font-family: "SimSun";

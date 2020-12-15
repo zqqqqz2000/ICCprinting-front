@@ -2,14 +2,15 @@
     <div class="header">
         <div v-if="isLogin">Hi, {{ username }}</div>
         <div v-else>临时用户: {{ username }}</div>
-        <a href="#">注册</a>
-        <a href="#">登录</a>
+        <div>注册</div>
+        <div>登录</div>
+        <div style="float: right">投诉</div>
     </div>
 </template>
 
 <script>
 export default {
-    name: "Header",
+    name: "PageHeader",
     data() {
         return {
             isLogin: this.$cookies.get("isLogin"),
@@ -19,8 +20,22 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .header {
     width: 100vw;
+    height: 30px;
+    padding: 15px;
+    background: rgba($color: #000000, $alpha: 0.3);
+    color: white;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+}
+
+.header > * {
+    display: inline-block;
+    margin-right: 50px;
 }
 </style>

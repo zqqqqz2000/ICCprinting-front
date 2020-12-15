@@ -1,0 +1,33 @@
+.fix-full {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    right: 0;
+}
+
+@mixin cover ($alpha) {
+    @extend .fix-full;
+    background: rgba($color: #000000, $alpha: $alpha);
+}
+
+@mixin background ($url, $blur) {
+    @extend .fix-full;
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    filter: blur($blur);
+}
+
+.middle-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.title {
+    color: white;
+    font-weight: 900;
+    font-size: 3em;
+}

@@ -10,6 +10,13 @@ const routes = [
         meta: {
             title: '首页'
         }
+    },
+    {
+        path: '/',
+        component: Index,
+        meta: {
+            title: '首页'
+        }
     }
 ];
 

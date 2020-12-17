@@ -74,7 +74,7 @@ export default {
 $swing-angle: 1deg;
 $rope-segment: 5px;
 $rope-width: 1px;
-$segment-scale: 0.95;
+$segment-scale: 0.97;
 $swing-speed: 7s;
 
 div {

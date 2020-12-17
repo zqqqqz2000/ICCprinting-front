@@ -23,7 +23,7 @@ export default {
 <style lang="scss" scoped>
 .header {
     width: 100vw;
-    height: 30px;
+    height: 60px;
     padding: 15px;
     background: rgba($color: #000000, $alpha: 0.3);
     color: white;

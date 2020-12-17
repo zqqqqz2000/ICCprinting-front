@@ -8,7 +8,13 @@
             </div>
             <page-header />
             <div class="middle-container main-container">
-                <div class="title">冰淇淋🍨学院自助打印店</div>
+                <div>
+                    <div class="title">冰淇淋🍨学院自助打印店</div>
+                    <div class="search-area">
+                        <b-form-input placeholder="打印单号"></b-form-input>
+                        <b-button variant="success">搜索</b-button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -46,5 +52,25 @@ export default {
 
 .main-container {
     margin-top: 50px;
+}
+
+.search-area {
+    margin-top: 20px;
+}
+
+.search-area > input {
+    width: calc(100% - 78px);
+    display: inline;
+    vertical-align: middle;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.search-area > button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    // background: #fb7299;
+    // border-color: #fb7299;
+    // margin-left: 10px;
 }
 </style>

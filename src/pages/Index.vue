@@ -14,6 +14,7 @@
                         <b-form-input placeholder="打印单号"></b-form-input>
                         <b-button variant="success">搜索</b-button>
                     </div>
+                    <time-line />
                 </div>
             </div>
         </div>
@@ -23,14 +24,18 @@
 <script>
 import Rope from "../components/Rope";
 import PageHeader from "../components/Header";
+import TimeLine from "../components/TimeLine";
 
 export default {
     name: "Index",
     components: {
         Rope,
         "page-header": PageHeader,
+        "time-line": TimeLine,
     },
 };
+
+TimeLine;
 </script>
 
 <style lang="scss" scoped>
@@ -59,7 +64,7 @@ export default {
 }
 
 .search-area > input {
-    width: calc(100% - 78px);
+    width: calc(100% - 65px);
     display: inline;
     vertical-align: middle;
     border-top-right-radius: 0;
@@ -69,8 +74,6 @@ export default {
 .search-area > button {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    // background: #fb7299;
-    // border-color: #fb7299;
-    // margin-left: 10px;
+    width: 65px !important;
 }
 </style>

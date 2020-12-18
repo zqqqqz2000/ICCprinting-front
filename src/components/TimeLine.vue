@@ -2,7 +2,12 @@
     <div>
         <!-- 时间轴主体 -->
         <div class="timeline-header"></div>
-        <div>
+        <div class="segment">
+            <div class="timeline-date">日期</div>
+            <div class="timeline-line"></div>
+            <div class="timeline-container">内容</div>
+        </div>
+        <div class="segment">
             <div class="timeline-date">日期</div>
             <div class="timeline-line"></div>
             <div class="timeline-container">内容</div>
@@ -38,12 +43,40 @@ $datewidth: 50px;
 
 .timeline-container {
     @include timeline-element();
+    margin-left: 20px;
+}
+
+.timeline-date::after {
+    content: "";
+    display: inline-block;
+    right: -14.5px;
+    width: 8px;
+    height: 8px;
+    position: relative;
+    border-radius: 50%;
+    background: orange;
+    z-index: 2;
+}
+
+.timeline-container::before {
+    content: "";
+    display: inline-block;
+    left: -20px;
+    top: -4px;
+    width: 19px;
+    height: 1px;
+    position: relative;
+    background: orange;
 }
 
 .timeline-line {
     border-left: 1px solid yellowgreen;
-    height: 1em;
+    height: 4em;
     @include timeline-element();
     position: relative;
+}
+
+.segment ~ .segment {
+    margin-top: -5px;
 }
 </style>
